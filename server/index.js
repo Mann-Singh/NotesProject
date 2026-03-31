@@ -43,8 +43,10 @@ app.post('/notes', (req, res) => {
 
     const stmt = db.prepare('INSERT INTO notes (title, content) VALUES (?, ?)');
     const result = stmt.run(title, content);
-}); // Inserts a new note into the database with the provided title and content, and returns an error if either is missing
 
+    const newNote = db.prepare('SELECT * FROM notes WHERE id = ?').get(result.lastInsertRowid);
+    res.status(201).json(newNote);
+}); // Inserts a new note into the database with the provided title and content, and returns an error if either is missing
 app.listen(PORT, () => {
     console.log (`Server is running on port ${PORT}`);
 });

@@ -48,7 +48,7 @@ async function fetchNotes() {
     }
   }
   return (
-    <div style= {{ padding: '2rem', maxWidth: '700px', margin: '0 auto' }}>
+    <div style= {{ padding: '3rem', maxWidth: '700px', margin: '0 auto' }}>
       <h1>Notes App</h1>
 
       <form onSubmit={handleSubmit} style={{ marginBottom: '2rem'}}>
