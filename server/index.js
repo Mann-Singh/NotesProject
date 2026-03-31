@@ -27,6 +27,23 @@ app.get('/', (req, res) => {
     res.send('API is running');
 }); // confrims server is running by sending 'API is running' when root URL is accessed
 
+//restructure here ---------------------------------------------------------------------------------------------
+app.post('/auth/signup')
+
+app.post('/auth/login')
+
+app.get('/boards')
+
+app.post('/boards')
+
+app.get('/boards/:id')
+
+app.get('/boards/:id/notes')
+
+app.post('/boards/:id/notes')
+
+//restructured above -------------------------------------------------------------------------------------------------
+
 //gets all notes
 app.get('/notes', (req, res) => {
     const notes = db.prepare('SELECT * FROM notes ORDER BY created_at DESC').all();

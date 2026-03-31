@@ -24,6 +24,7 @@ router.post('/signup', async (req, res) => {
     res.status(201).json({ message: 'User created successfuly'});
 });
 
+
 router.post('/login', async (req, res) => {
     // extracts user & password to check if req is valid
     const { username, password } = req.body;
